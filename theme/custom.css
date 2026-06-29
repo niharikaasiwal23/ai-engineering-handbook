@@ -1,0 +1,122 @@
+/* AI Engineering Handbook — Custom Theme */
+
+/* Better code block styling */
+pre {
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Callout box styling */
+blockquote {
+    border-left: 4px solid #4a9eff;
+    background: rgba(74, 158, 255, 0.05);
+    padding: 12px 16px;
+    margin: 16px 0;
+    border-radius: 0 6px 6px 0;
+}
+
+blockquote p:first-child {
+    margin-top: 0;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.95em;
+}
+
+th {
+    background: rgba(0, 0, 0, 0.04);
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+td {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+tr:hover td {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* Heading anchors */
+h2 {
+    margin-top: 2em;
+    padding-top: 0.5em;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+h3 {
+    margin-top: 1.5em;
+}
+
+/* Better inline code */
+code:not(pre code) {
+    background: rgba(0, 0, 0, 0.04);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* File tree styling */
+pre code.language-text,
+pre code.language-plaintext {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* Mermaid diagrams */
+.mermaid {
+    margin: 24px 0;
+    text-align: center;
+}
+
+/* Figure captions (italicized text after diagrams) */
+p > em:only-child {
+    display: block;
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: -8px;
+}
+
+/* Dark theme adjustments */
+.ayu blockquote,
+.navy blockquote,
+.coal blockquote {
+    background: rgba(74, 158, 255, 0.08);
+    border-left-color: #5cb3ff;
+}
+
+.ayu th,
+.navy th,
+.coal th {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ayu code:not(pre code),
+.navy code:not(pre code),
+.coal code:not(pre code) {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 6px 8px;
+    }
+}

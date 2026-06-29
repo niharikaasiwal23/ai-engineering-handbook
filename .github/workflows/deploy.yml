@@ -1,0 +1,76 @@
+name: Deploy mdBook to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mdBook
+        run: |
+          mkdir -p bin
+          curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.40/mdbook-v0.4.40-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C bin
+          echo "$PWD/bin" >> $GITHUB_PATH
+
+      - name: Install mdbook-mermaid
+        run: |
+          curl -sSL https://github.com/badboy/mdbook-mermaid/releases/download/v0.14.0/mdbook-mermaid-v0.14.0-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C bin
+          echo "$PWD/bin" >> $GITHUB_PATH
+
+      - name: Copy chapters into src/
+        run: |
+          cp chapter-01-ai-landscape/chapter-01.md src/chapter-01.md
+          cp chapter-02-llm-fundamentals/chapter-02.md src/chapter-02.md
+          cp chapter-03-apis/chapter-03.md src/chapter-03.md
+          cp chapter-04-prompt-engineering/chapter-04.md src/chapter-04.md
+          cp chapter-05-building-ai-apps/chapter-05.md src/chapter-05.md
+          cp chapter-06-embeddings/chapter-06.md src/chapter-06.md
+          cp chapter-07-rag/chapter-07.md src/chapter-07.md
+          cp chapter-08-databases/chapter-08.md src/chapter-08.md
+          cp chapter-09-ai-automation/chapter-09.md src/chapter-09.md
+          cp chapter-10-ai-agents/chapter-10.md src/chapter-10.md
+          cp chapter-11-flutter-ai/chapter-11.md src/chapter-11.md
+          cp chapter-12-deployment/chapter-12.md src/chapter-12.md
+          cp chapter-13-client-projects/chapter-13.md src/chapter-13.md
+          cp chapter-14-freelancing/chapter-14.md src/chapter-14.md
+          cp chapter-15-ai-saas/chapter-15.md src/chapter-15.md
+          cp BOOK_RULES.md src/book-rules.md
+
+      - name: Install mermaid preprocessor
+        run: mdbook-mermaid install .
+
+      - name: Build mdBook
+        run: mdbook build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

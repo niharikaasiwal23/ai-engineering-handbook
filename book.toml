@@ -1,0 +1,26 @@
+[book]
+title = "AI Engineering Handbook"
+authors = ["Niharika"]
+description = "A professional technical handbook for software developers transitioning into AI engineering."
+language = "en"
+src = "src"
+
+[build]
+build-dir = "output"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "ayu"
+git-repository-url = ""
+additional-css = ["theme/custom.css"]
+
+[output.html.search]
+enable = true
+limit-results = 30
+use-hierarchical-heading = true
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output.html.playground]
+editable = false
