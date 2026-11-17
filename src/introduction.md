@@ -19,12 +19,13 @@ By the end of this book, you will have:
 
 Each chapter builds on the previous ones. Don't skip ahead — concepts compound.
 
-The book is organized into five modules:
+The book is organized into six modules:
 1. **Foundations** (Chapters 1–4): Understanding AI, LLMs, APIs, and prompting
 2. **Building** (Chapters 5–8): Applications, embeddings, RAG, and databases
 3. **Systems** (Chapters 9–11): Automation, agents, and mobile AI
 4. **Production** (Chapter 12): Deployment, monitoring, and scaling
 5. **Business** (Chapters 13–15): Client projects, freelancing, and SaaS
+6. **Backend** (Chapters 16–17): Node.js and AWS for backend developers
 
 Every chapter includes hands-on exercises, a mini project, and a challenge project. Build as you read.
 

@@ -34,6 +34,11 @@
 - [Chapter 14: Freelancing as an AI Engineer](./chapter-14.md)
 - [Chapter 15: Building AI SaaS](./chapter-15.md)
 
+# Backend
+
+- [Chapter 16: Node.js + AI](./chapter-16.md)
+- [Chapter 17: AWS Cloud + AI](./chapter-17.md)
+
 ---
 
 [Editorial Standards](./book-rules.md)

@@ -30,6 +30,8 @@ copy_chapters() {
     cp "$BOOK_DIR/chapter-13-client-projects/chapter-13.md" "$SRC_DIR/chapter-13.md"
     cp "$BOOK_DIR/chapter-14-freelancing/chapter-14.md" "$SRC_DIR/chapter-14.md"
     cp "$BOOK_DIR/chapter-15-ai-saas/chapter-15.md" "$SRC_DIR/chapter-15.md"
+    cp "$BOOK_DIR/chapter-16-nodejs-ai/chapter-16.md" "$SRC_DIR/chapter-16.md"
+    cp "$BOOK_DIR/chapter-17-aws-ai/chapter-17.md" "$SRC_DIR/chapter-17.md"
     cp "$BOOK_DIR/BOOK_RULES.md" "$SRC_DIR/book-rules.md"
     
     echo "✅ Chapters copied."

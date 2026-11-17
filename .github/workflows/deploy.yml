@@ -48,6 +48,8 @@ jobs:
           cp chapter-13-client-projects/chapter-13.md src/chapter-13.md
           cp chapter-14-freelancing/chapter-14.md src/chapter-14.md
           cp chapter-15-ai-saas/chapter-15.md src/chapter-15.md
+          cp chapter-16-nodejs-ai/chapter-16.md src/chapter-16.md
+          cp chapter-17-aws-ai/chapter-17.md src/chapter-17.md
           cp BOOK_RULES.md src/book-rules.md
 
       - name: Install mermaid preprocessor

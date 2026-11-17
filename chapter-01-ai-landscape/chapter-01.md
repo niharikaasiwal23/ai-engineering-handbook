@@ -492,6 +492,9 @@ flowchart TD
     M12 --> M13[Module 13: Client Projects]
     M13 --> M14[Module 14: Freelancing]
     M14 --> M15[Module 15: AI SaaS]
+    M5 --> M16[Module 16: Node.js + AI]
+    M12 --> M17[Module 17: AWS Cloud + AI]
+    M16 --> M17
 ```
 
 *Figure 4: Book module dependency graph*
